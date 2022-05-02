@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+*{margin: 0px; padding: 0px;}
+a{text-decoration: none; color: black; }
+a:hover{color: red;}
+
+.item .title{font-size: 15px;}
+.item .content{font-size: 11px; margin-bottom: 50px; }
+.item .price1{text-decoration: line-through; color: gray; font-size: 11px;}
+.item .price2{font-size: 15px;}
+#find{margin: 100px; padding: 50px;}
