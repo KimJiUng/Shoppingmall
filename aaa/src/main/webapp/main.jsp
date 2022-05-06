@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@include file="header.jsp" %>
 	<br><br><br><br><br><br>
 	<div id="cs" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">	<!-- 1캐러셀 -->
 														<!-- data-bs-interval : 밀리초 -->
@@ -66,6 +67,7 @@
 		</div>
 		<%} %>
 	</div>
+	<%@include file="footer.jsp" %>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-	<%@include file="header.jsp" %>
+	<%@include file="../header.jsp" %>
 	<div class="container login" style="margin-top: 200px;">
 		<div class="col-md-4 offset-4">
 			<div class="mainhead text-center">

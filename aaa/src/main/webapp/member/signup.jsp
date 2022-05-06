@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<%@include file="header.jsp" %>
+	<%@include file="../header.jsp" %>
 	
 	<div class="container" style="margin-top: 200px;">
 		<div class="col-md-4 offset-4">
@@ -17,9 +17,10 @@
 		</div>
 		<br><br>
 		<div class="form-floating">
-		  <input type="text" class="form-control my-4" id="floatingInput" placeholder="아이디를 입력하세요." maxlength="10">
-		  <label for="floatingInput">아이디를 입력하세요.<span style="color: red;">*</span></label>
+		  <input type="text" class="form-control my-4" id="mid" name="mid" placeholder="아이디를 입력하세요." maxlength="10">
+		  <label for="mid">아이디를 입력하세요.<span style="color: red;">*</span></label>
 		</div>
+		<span class="signuptext" id="idcheck"></span>
 		<div class="form-floating">
 		  <input type="password" class="form-control my-4" id="floatingInput" placeholder="비밀번호를 입력하세요." maxlength="10">
 		  <label for="floatingInput">비밀번호를 입력하세요.<span style="color: red;">*</span></label>

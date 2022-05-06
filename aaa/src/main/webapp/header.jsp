@@ -9,7 +9,7 @@
 	<!-- 부트스트랩 css -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<!-- 사용자가 정의한 css 포함 -->
-	<link href="CSS/main.css" rel="stylesheet">
+	<link href="/project/css/main.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	
@@ -21,13 +21,13 @@
 		<div class="row">	<!-- 가로 배치 -->
 				<div class="col-md-4 offset-4 text-center">	<!-- 상단 로고 -->
 							<!-- text-center : 박스권내 내용물 가운데 정렬 -->
-					<h3><a href="index.jsp">쇼핑몰 이름</a></h3>	<!-- 링크 -->
+					<h3><a href="/project/main.jsp">쇼핑몰 이름</a></h3>	<!-- 링크 -->
 				</div>
 				<div class="col-md-4 d-flex justify-content-end">	<!-- 상단 메뉴 -->
 					<ul class="nav">	<!-- 가로 배치 -->
-						<li><a href="login.jsp">로그인</a> | </li>
-						<li><a href="signup.jsp">회원가입</a> | </li>
-						<li><a href="cart.jsp">장바구니</a></li>
+						<li><a href="/project/member/login.jsp">로그인</a> | </li>
+						<li><a href="/project/member/signup.jsp">회원가입</a> | </li>
+						<li><a href="/project/member/cart.jsp">장바구니</a></li>
 					</ul>
 				</div>
 			</div>
