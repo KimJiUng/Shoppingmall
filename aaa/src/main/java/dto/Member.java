@@ -5,24 +5,31 @@ public class Member {
 	private int mnum;
 	private String mid;
 	private String mpassword;
+	private String mname;
 	private String memail;
 	private String mphone;
 	private int mpoint;
 	private String mbirthday;
 	private String mdate;
+	private int mgrade;
+	private String maddress;
 	
 	public Member() {}
 
-	public Member(int mnum, String mid, String mpassword, String memail, String mphone, int mpoint, String mbirthday,
-			String mdate) {
+	public Member(int mnum, String mid, String mpassword, String mname, String memail, String mphone, int mpoint,
+			String mbirthday, String mdate, int mgrade, String maddress) {
+		super();
 		this.mnum = mnum;
 		this.mid = mid;
 		this.mpassword = mpassword;
+		this.mname = mname;
 		this.memail = memail;
 		this.mphone = mphone;
 		this.mpoint = mpoint;
 		this.mbirthday = mbirthday;
 		this.mdate = mdate;
+		this.mgrade = mgrade;
+		this.maddress = maddress;
 	}
 
 	public int getMnum() {
@@ -47,6 +54,14 @@ public class Member {
 
 	public void setMpassword(String mpassword) {
 		this.mpassword = mpassword;
+	}
+
+	public String getMname() {
+		return mname;
+	}
+
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
 
 	public String getMemail() {
@@ -89,11 +104,30 @@ public class Member {
 		this.mdate = mdate;
 	}
 
+	public int getMgrade() {
+		return mgrade;
+	}
+
+	public void setMgrade(int mgrade) {
+		this.mgrade = mgrade;
+	}
+
+	public String getMaddress() {
+		return maddress;
+	}
+
+	public void setMaddress(String maddress) {
+		this.maddress = maddress;
+	}
+
 	@Override
 	public String toString() {
-		return "Member [mnum=" + mnum + ", mid=" + mid + ", mpassword=" + mpassword + ", memail=" + memail + ", mphone="
-				+ mphone + ", mpoint=" + mpoint + ", mbirthday=" + mbirthday + ", mdate=" + mdate + "]";
+		return "Member [mnum=" + mnum + ", mid=" + mid + ", mpassword=" + mpassword + ", mname=" + mname + ", memail="
+				+ memail + ", mphone=" + mphone + ", mpoint=" + mpoint + ", mbirthday=" + mbirthday + ", mdate=" + mdate
+				+ ", mgrade=" + mgrade + ", maddress=" + maddress + "]";
 	}
+	
+	
 	
 	
 	

@@ -12,7 +12,7 @@ import dao.MemberDao;
 /**
  * Servlet implementation class idcheck
  */
-@WebServlet("/idcheck")
+@WebServlet("/member/idcheck")
 public class idcheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,8 +24,31 @@ public class idcheck extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String mid = request.getParameter("mid");
-		MemberDao.memberDao.
+		String field = request.getParameter("field");
+		
+		if(field!=null && field.equals("id")) {
+			String mid = request.getParameter("mid");
+			String table = "mid";
+			boolean result = MemberDao.memberDao.duplicatecehck(table, mid);
+			if(result) {
+				response.getWriter().print(1);
+			}else {
+				response.getWriter().print(2);
+			}
+		}else if(field !=null && field.equals("email")) {
+			String email = request.getParameter("email");
+			String table = "memail";
+			boolean result = MemberDao.memberDao.duplicatecehck(table, email);
+			if(result) {
+				response.getWriter().print(1);
+			}else {
+				response.getWriter().print(2);
+			}
+		}else {
+			
+		}
+
+		
 	}
 
 

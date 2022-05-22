@@ -4,17 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>SHOPPING MALL</title>
 
 	<!-- 부트스트랩 css -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<!-- 사용자가 정의한 css 포함 -->
 	<link href="/project/css/main.css" rel="stylesheet">
 	
+	<!-- 폰트어썸[ 아이콘 ]  -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	
 </head>
 <body>
+
+	<%String loginid = (String)session.getAttribute("loginid"); %>
 	<div class="fixed-top bg-white"style="margin-bottom: 50px;">
 	<div class="container py-3" >
 
@@ -23,13 +26,25 @@
 							<!-- text-center : 박스권내 내용물 가운데 정렬 -->
 					<h3><a href="/project/main.jsp">쇼핑몰 이름</a></h3>	<!-- 링크 -->
 				</div>
-				<div class="col-md-4 d-flex justify-content-end">	<!-- 상단 메뉴 -->
-					<ul class="nav">	<!-- 가로 배치 -->
-						<li><a href="/project/member/login.jsp">로그인</a> | </li>
-						<li><a href="/project/member/signup.jsp">회원가입</a> | </li>
-						<li><a href="/project/member/cart.jsp">장바구니</a></li>
-					</ul>
-				</div>
+				
+				<%if(loginid==null) {%>
+					<div class="col-md-4 d-flex justify-content-end">	<!-- 상단 메뉴 -->
+						<ul class="nav">	<!-- 가로 배치 -->
+							<li><a href="/project/member/login.jsp">로그인</a> | </li>
+							<li><a href="/project/member/signup.jsp">회원가입</a> | </li>
+							<li><a href="/project/member/cart.jsp">장바구니</a></li>
+						</ul>
+					</div>
+				<%}else{ %>
+					<div class="col-md-4 d-flex justify-content-end">	<!-- 상단 메뉴 -->
+						<ul class="nav">	<!-- 가로 배치 -->
+							<li><a href="/project/logout">로그아웃</a> | </li>
+							<li><a href="#">회원정보</a> | </li>
+							<li><a href="/project/member/cart.jsp">장바구니</a></li>
+						</ul>
+					</div>
+				<%} %>
+				
 			</div>
 
 		<div class="navbar-expand-md navbar-light bg-white my-3">
@@ -60,6 +75,8 @@
 	
 	<!-- 부트스트랩 js -->	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<!-- jquery 최신 cdn -->
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
 </body>
 </html>
