@@ -15,6 +15,15 @@ public class Member {
 	private String maddress;
 	
 	public Member() {}
+	
+
+	public Member(int mnum, String mid, String mname) {
+		super();
+		this.mnum = mnum;
+		this.mid = mid;
+		this.mname = mname;
+	}
+
 
 	public Member(int mnum, String mid, String mpassword, String mname, String memail, String mphone, int mpoint,
 			String mbirthday, String mdate, int mgrade, String maddress) {

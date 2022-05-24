@@ -18,3 +18,7 @@ a:hover{color: red;}
 .item .price1{text-decoration: line-through; color: gray; font-size: 11px;}
 .item .price2{font-size: 15px;}
 #find{margin: 100px; padding: 50px;}
+
+.header_topmenu li{
+	margin-left: 15px;
+}

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.MemberDao;
+import dto.Member;
 
 /**
  * Servlet implementation class login
@@ -41,7 +42,9 @@ public class login extends HttpServlet {
 		boolean result = MemberDao.memberDao.login(mid, mpassword);
 		if(result) {
 			HttpSession session = request.getSession();
-			session.setAttribute("loginid", mid);
+			Member member = MemberDao.memberDao.getmember2(mid);
+			Member member2 = new Member(member.getMnum(), member.getMid(), member.getMname());
+			session.setAttribute("login", member2 );
 			response.getWriter().print(1);
 		}else {
 			response.getWriter().print(2);

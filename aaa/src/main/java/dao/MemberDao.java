@@ -49,9 +49,35 @@ public class MemberDao extends Dao{
 	}
 	
 	// 5. 회원 정보 불러오기
-	public boolean getmember(int mnum) {
-		return false;
+	public Member getmember(int mnum) {
+		try {
+			String sql = "select * from member where mnum="+mnum;
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				Member member = new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11));
+				return member;
+			}
+					
+		}catch(Exception e) {System.out.println("회원 정보 불러오기 오류 : "+e);}
+		return null;
 	}
+	
+	// 5-2. 회원 정보 불러오기
+		public Member getmember2(String mid) {
+			try {
+				String sql = "select * from member where mid='"+mid+"'";
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					Member member = new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11));
+					return member;
+				}
+						
+			}catch(Exception e) {System.out.println("회원 정보 불러오기 오류 : "+e);}
+			return null;
+		}
+	
 	
 	// 6. 중복체크 메소드
 	public boolean duplicatecehck(String table, String value) {

@@ -1,3 +1,4 @@
+<%@page import="dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,7 +18,8 @@
 </head>
 <body>
 
-	<%String loginid = (String)session.getAttribute("loginid"); %>
+	<%Member loginmember = (Member)session.getAttribute("login"); %>
+	
 	<div class="fixed-top bg-white"style="margin-bottom: 50px;">
 	<div class="container py-3" >
 
@@ -27,19 +29,19 @@
 					<h3><a href="/project/main.jsp">쇼핑몰 이름</a></h3>	<!-- 링크 -->
 				</div>
 				
-				<%if(loginid==null) {%>
+				<%if(loginmember==null) {%>
 					<div class="col-md-4 d-flex justify-content-end">	<!-- 상단 메뉴 -->
-						<ul class="nav">	<!-- 가로 배치 -->
-							<li><a href="/project/member/login.jsp">로그인</a> | </li>
-							<li><a href="/project/member/signup.jsp">회원가입</a> | </li>
+						<ul class="nav header_topmenu">	<!-- 가로 배치 -->
+							<li><a href="/project/member/login.jsp">로그인</a></li>
+							<li><a href="/project/member/signup.jsp">회원가입</a></li>
 							<li><a href="/project/member/cart.jsp">장바구니</a></li>
 						</ul>
 					</div>
 				<%}else{ %>
 					<div class="col-md-4 d-flex justify-content-end">	<!-- 상단 메뉴 -->
-						<ul class="nav">	<!-- 가로 배치 -->
-							<li><a href="/project/logout">로그아웃</a> | </li>
-							<li><a href="#">회원정보</a> | </li>
+						<ul class="nav header_topmenu">	<!-- 가로 배치 -->
+							<li><a href="/project/logout">로그아웃</a></li>
+							<li><a href="/project/member/myinfo.jsp">회원정보</a></li>
 							<li><a href="/project/member/cart.jsp">장바구니</a></li>
 						</ul>
 					</div>
